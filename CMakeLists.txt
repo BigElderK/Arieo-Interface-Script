@@ -4,7 +4,7 @@ include($ENV{ARIEO_BUILDENV_PACKAGE_INSTALL_FOLDER}/cmake/build_environment.cmak
 project(ArieoEngine)
 
 arieo_engine_project(
-    arieo_scripting_interface
+    arieo_script_interface
     PROJECT_TYPE interface
     
     PACKAGES
