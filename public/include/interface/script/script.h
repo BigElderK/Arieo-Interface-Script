@@ -43,16 +43,16 @@ namespace Arieo::Interface::Script
     class IScriptEngine
     {
     public:
-        virtual Base::Interop<IContext> createContext() = 0;
-        virtual void destroyContext(Base::Interop<IContext> context) = 0;
+        virtual Base::InteropOld<IContext> createContext() = 0;
+        virtual void destroyContext(Base::InteropOld<IContext> context) = 0;
 
         virtual void initInterfaceLinkers(const std::filesystem::path& lib_file_path) = 0;
         
-        virtual Base::Interop<IModule> loadModuleFromWatString(const std::string& wat_string) = 0;
-        virtual Base::Interop<IModule> loadModuleFromCompiledBinary(void* binary_data, size_t data_size) = 0;
-        virtual void unloadModule(Base::Interop<IModule> module) = 0;
+        virtual Base::InteropOld<IModule> loadModuleFromWatString(const std::string& wat_string) = 0;
+        virtual Base::InteropOld<IModule> loadModuleFromCompiledBinary(void* binary_data, size_t data_size) = 0;
+        virtual void unloadModule(Base::InteropOld<IModule> module) = 0;
 
-        virtual Base::Interop<IInstance> createInstance(Base::Interop<IContext> context, Base::Interop<IModule> module) = 0;
-        virtual void destroyInstance(Base::Interop<IInstance> instance) = 0;
+        virtual Base::InteropOld<IInstance> createInstance(Base::InteropOld<IContext> context, Base::InteropOld<IModule> module) = 0;
+        virtual void destroyInstance(Base::InteropOld<IInstance> instance) = 0;
     };
 }
